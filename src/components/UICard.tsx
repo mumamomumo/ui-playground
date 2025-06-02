@@ -1,5 +1,4 @@
 import { createSignal } from "solid-js";
-import SlideOutInput from "./UI/SlideOutInput";
 
 type UICardProps = {
   children: any;
@@ -26,9 +25,7 @@ const UICard = (props: UICardProps) => {
       }}
       onClick={() => setBackgroundColor(getNewColor())}
     >
-      <div class="absolute top-5 left-5">
-        <SlideOutInput />
-      </div>
+      {/* <div class="absolute top-5 left-5"></div> - TODO*/}
       <div onClick={(e) => e.stopPropagation()}>{props.children}</div>
     </div>
   );
