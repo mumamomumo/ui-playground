@@ -12,7 +12,28 @@ const App = () => {
           try to make them
         </p>
       </section>
-      <section class="ui-tidbits flex border-t-4 p-5">
+      <section class="ui-tidbits flex border-t-4 p-5 gap-5 flex-wrap justify-around">
+        <UICard className="aspect-[6/5]">
+          <TextInput placeholder="Input" />
+        </UICard>
+        <UICard className="aspect-[6/5]">
+          <TextInput placeholder="Input" />
+        </UICard>
+        <UICard className="aspect-[6/5]">
+          <TextInput placeholder="Input" />
+        </UICard>
+        <UICard className="aspect-[6/5]">
+          <TextInput placeholder="Input" />
+        </UICard>
+        <UICard className="aspect-[6/5]">
+          <TextInput placeholder="Input" />
+        </UICard>
+        <UICard className="aspect-[6/5]">
+          <TextInput placeholder="Input" />
+        </UICard>
+        <UICard className="aspect-[6/5]">
+          <TextInput placeholder="Input" />
+        </UICard>
         <UICard className="aspect-[6/5]">
           <TextInput placeholder="Input" />
         </UICard>
