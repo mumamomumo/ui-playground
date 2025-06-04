@@ -2,13 +2,15 @@ import { createSignal, Show, type JSX } from "solid-js";
 
 type TextInputProps = {
   placeholder?: string;
+  background?: string;
   inputStyle?: JSX.CSSProperties;
-  labelStyle?: JSX.CSSProperties;
 };
 
 const TextInput = (props: TextInputProps) => {
   const [inputFocused, setInputFocused] = createSignal(false);
 
+  let inputRef: HTMLInputElement | undefined;
+  if (!props.background) props.background = "white";
   return (
     <div>
       <Show when={typeof props.placeholder != undefined}>
@@ -17,7 +19,8 @@ const TextInput = (props: TextInputProps) => {
             "custom-input-label " + (inputFocused() ? "focused" : "unfocused")
           }
           style={{
-            ...props.labelStyle,
+            background: props.background,
+            color: props.inputStyle?.color,
           }}
         >
           {props.placeholder}
@@ -26,10 +29,11 @@ const TextInput = (props: TextInputProps) => {
       <input
         class="custom-input-area"
         onFocus={() => setInputFocused(true)}
-        onBlur={() => setInputFocused(false)}
-        style={{
-          ...props.inputStyle,
+        onBlur={(e) => {
+          if (e.target.value === "") setInputFocused(false);
         }}
+        style={{ ...props.inputStyle, background: props.background }}
+        ref={inputRef}
       />
     </div>
   );

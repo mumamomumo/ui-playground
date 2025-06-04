@@ -1,6 +1,5 @@
 import "./App.css";
-import TextInput from "./components/UI/TextInput";
-import UICard from "./components/UICard";
+import TextInputCard from "./components/Card/TextInputCard";
 
 const App = () => {
   return (
@@ -12,31 +11,8 @@ const App = () => {
           try to make them
         </p>
       </section>
-      <section class="ui-tidbits flex border-t-4 p-5 gap-5 flex-wrap justify-around">
-        <UICard className="aspect-[6/5]">
-          <TextInput placeholder="Input" />
-        </UICard>
-        <UICard className="aspect-[6/5]">
-          <TextInput placeholder="Input" />
-        </UICard>
-        <UICard className="aspect-[6/5]">
-          <TextInput placeholder="Input" />
-        </UICard>
-        <UICard className="aspect-[6/5]">
-          <TextInput placeholder="Input" />
-        </UICard>
-        <UICard className="aspect-[6/5]">
-          <TextInput placeholder="Input" />
-        </UICard>
-        <UICard className="aspect-[6/5]">
-          <TextInput placeholder="Input" />
-        </UICard>
-        <UICard className="aspect-[6/5]">
-          <TextInput placeholder="Input" />
-        </UICard>
-        <UICard className="aspect-[6/5]">
-          <TextInput placeholder="Input" />
-        </UICard>
+      <section class="ui-tidbits flex border-t-4 p-5 gap-5 flex-wrap justify-baseline px-10">
+        <TextInputCard />
       </section>
     </div>
   );
