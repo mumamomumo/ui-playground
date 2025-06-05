@@ -1,5 +1,5 @@
 import { createSignal, Show, type JSX } from "solid-js";
-
+import "./TextInput.css"
 type TextInputProps = {
   placeholder?: string;
   background?: string;
