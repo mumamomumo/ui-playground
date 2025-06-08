@@ -1,0 +1,57 @@
+.slide-out-container {
+  display: flex;
+  gap: 0.2rem;
+  pointer-events: none;
+  align-items: center;
+  width: fit-content;
+  overflow: hidden;
+}
+.slide-out-container.right {
+  flex-direction: row-reverse;
+}
+.slide-out-button {
+  width: 24px;
+  aspect-ratio: 1/1;
+  rotate: 0;
+  pointer-events: all;
+  transition: rotate 300ms ease-out;
+  z-index: 50;
+}
+.slide-out-button.out {
+  rotate: 45deg;
+}
+.slide-out-input {
+  border-bottom: 2px solid black;
+  outline: none;
+  overflow: hidden;
+}
+
+/* The main css code */
+.slide-out-input-container {
+  transform: translateX(-150%);
+  transition: transform 300ms ease-in-out;
+}
+.slide-out-input-container.right {
+  transform: translateX(150%);
+}
+.slide-out-input-container.out {
+  display: block;
+  pointer-events: all;
+  transform: translateX(0);
+}
+
+/* --Second version-- */
+
+/* The main css code */
+.slide-out-input-container.v2 {
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 300ms ease-in-out;
+}
+.slide-out-input-container.right.v2 {
+  transform-origin: right;
+}
+.slide-out-input-container.out.v2 {
+  pointer-events: all;
+  transform: scaleX(1);
+}

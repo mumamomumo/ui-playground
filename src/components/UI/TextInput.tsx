@@ -1,9 +1,11 @@
 import { createSignal, Show, type JSX } from "solid-js";
-import "./TextInput.css"
+import "./css/TextInput.css";
+import { cn } from "../../utils/cn";
 type TextInputProps = {
   placeholder?: string;
   background?: string;
   inputStyle?: JSX.CSSProperties;
+  containerClassName?: string;
 };
 
 const TextInput = (props: TextInputProps) => {
@@ -12,7 +14,7 @@ const TextInput = (props: TextInputProps) => {
   let inputRef: HTMLInputElement | undefined;
   if (!props.background) props.background = "white";
   return (
-    <div>
+    <div class={cn("custom-input-container", props.containerClassName)}>
       <Show when={typeof props.placeholder != undefined}>
         <label
           class={

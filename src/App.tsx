@@ -1,5 +1,6 @@
 import "./App.css";
-import TextInputCard from "./components/Card/TextInputCard";
+import SlideOutInputCard from "./components/Cards/SlideOutInputCard";
+import TextInputCard from "./components/Cards/TextInputCard";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       </section>
       <section class="ui-tidbits flex border-t-4 p-5 gap-5 flex-wrap justify-baseline px-10">
         <TextInputCard />
+        <SlideOutInputCard />
       </section>
     </div>
   );

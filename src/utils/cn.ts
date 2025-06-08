@@ -1,4 +1,4 @@
-export function cn(...classes: string[]) {
+export function cn(...classes: (string | undefined)[]) {
   let className = "";
 
   classes.forEach((value, i, array) => {

@@ -1,8 +1,12 @@
 /* Custom input */
+.custom-input-container {
+  position: relative;
+}
 .custom-input-area {
   background-color: white;
   outline: none;
   padding: 0.5rem;
+  width: inherit;
   /* border-radius: 0.25rem; */
   border: 2px solid black;
   font-size: 1rem;
@@ -12,14 +16,14 @@
 .custom-input-label {
   position: absolute;
   color: rgba(0, 0, 0, 0.7);
-  padding-inline: 0.2rem;
+  padding-inline: 0.1rem;
   padding-top: 0;
   pointer-events: none;
   transition: translate 200ms ease-in-out, font-size 200ms ease-in-out;
 }
 .custom-input-label.unfocused {
   font-size: 1rem;
-  translate: 0.375rem 50%;
+  translate: 0.375rem 40%;
 }
 .custom-input-label.focused {
   translate: 0.375rem -50%;

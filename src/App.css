@@ -27,6 +27,7 @@ body {
 
 .card-options {
   position: absolute;
+  z-index: 10000;
   width: min-content;
   background: white;
   border: 1px solid black;
@@ -54,3 +55,8 @@ body {
   scale: 1;
 }
 
+.card-option-text {
+  outline: none;
+  max-width: 50%;
+  border-bottom: 1px solid black;
+}
