@@ -38,10 +38,18 @@ const SlideOutInputCard = () => {
       ]}
     >
       <SlideOutInput
-        buttonChildren={<img src="/images/Plus.svg" />}
+        buttonChildren={<img src="images/Plus.svg" />}
         direction={directionLeft() ? "left" : "right"}
         version2={version2()}
         placeholder={inputPlaceholder()}
+        buttonStyle={{
+          transition: "rotate 200ms ease-in-out",
+          rotate: "0deg",
+        }}
+        buttonActiveStyle={{
+          rotate: "45deg",
+          transition: "rotate 200ms ease-in-out",
+        }}
       />
     </UICard>
   );

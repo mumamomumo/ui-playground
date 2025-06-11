@@ -9,6 +9,9 @@ type SlideOutInputProps = {
   version2?: boolean;
   onChange?: (newValue: string) => any;
   onBlur?: (newValue: string) => any;
+  buttonStyle?: JSX.CSSProperties;
+  buttonActiveStyle?: JSX.CSSProperties;
+  inputStyle?: JSX.CSSProperties;
 };
 
 const SlideOutInput = (props: SlideOutInputProps) => {
@@ -36,6 +39,7 @@ const SlideOutInput = (props: SlideOutInputProps) => {
         onClick={() => {
           setSlideOut((prev) => !prev);
         }}
+        style={slideOut() ? props.buttonActiveStyle : props.buttonStyle}
       >
         {props.buttonChildren}
       </button>

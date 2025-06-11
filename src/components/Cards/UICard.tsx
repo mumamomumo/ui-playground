@@ -107,12 +107,7 @@ const UICard = (props: UICardProps) => {
           </div>
         </Show>
       </div>
-      <div
-        class={
-          "ui-card-tags absolute top-5 left-5 flex flex-wrap max-w-full gap-2 " +
-          JSON.stringify(props.tags)
-        }
-      >
+      <div class="ui-card-tags absolute top-5 left-5 flex flex-wrap max-w-full gap-2">
         <Show when={props.tags?.css != undefined}>
           <Tag width={25} level={props.tags?.css} type="css" />
         </Show>

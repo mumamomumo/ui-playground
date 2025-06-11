@@ -1,6 +1,7 @@
 import "./App.css";
 import SlideOutInputCard from "./components/Cards/SlideOutInputCard";
 import TextInputCard from "./components/Cards/TextInputCard";
+import SlideOutInput from "./components/UI/SlideOutInput";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <section class="ui-tidbits flex border-t-4 p-5 gap-5 flex-wrap justify-baseline px-10">
         <TextInputCard />
         <SlideOutInputCard />
+        <SlideOutInput buttonChildren={"Wha"} />
       </section>
     </div>
   );
