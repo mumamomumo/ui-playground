@@ -14,6 +14,17 @@ body {
   color: black;
 }
 
+button {
+  display: block;
+}
+
+.page-title {
+  font-weight: bold;
+  background: linear-gradient(to right, black, white);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .ui-card {
   place-content: center;
   display: inline-block;
@@ -22,7 +33,7 @@ body {
   min-width: min-content;
   width: 20%;
   max-width: 500px;
-  aspect-ratio: 3/2;
+  aspect-ratio: 2/1;
 }
 
 .card-options {

@@ -8,8 +8,9 @@ type TagType = Partial<
 type OptionType =
   | {
       name: string;
-      type: "color" | "text" | "number" | "checkbox";
+      type: "color" | "text" | "number" | "checkbox" | "area";
       value?: any;
+      placeholder?: string;
       onChange: (newValue: any) => any;
     }
   | {
@@ -37,8 +38,8 @@ const UICard = (props: UICardProps) => {
   return (
     <div
       class={
-        "ui-card min-w-[100px] min-h-[100px] p-4 place-content-center cursor-pointer relative justify-items-center" +
-        props.className
+        "ui-card min-w-[100px] min-h-[100px] p-4 place-content-center relative justify-items-center " +
+        (props.className ? props.className : "")
       }
       style={{
         "background-color": props.background,
@@ -61,12 +62,12 @@ const UICard = (props: UICardProps) => {
         </div>
         <Show when={optionsOpen()}>
           <div
-            class="card-options cursor-default  z-50 min-w-[200px]"
+            class="card-options cursor-default z-50 min-w-[200px]"
             onClick={(e) => e.stopPropagation()}
           >
             <For each={props.options}>
               {(item) => (
-                <div class="flex justify-between ">
+                <div class="flex justify-between items-center">
                   <label for={item.name} class="text-nowrap">
                     {item.name}
                   </label>
@@ -92,6 +93,13 @@ const UICard = (props: UICardProps) => {
                       checked={item.value}
                       type={item.type}
                     />
+                  ) : item.type === "area" ? (
+                    <textarea
+                      placeholder={item.placeholder}
+                      value={item.value}
+                      onChange={(e) => item.onChange(e.target.value)}
+                      class="border-2 border-black m-2 p-2"
+                    />
                   ) : (
                     <input
                       name={item.name}
@@ -99,6 +107,7 @@ const UICard = (props: UICardProps) => {
                       onChange={(e) => item.onChange(e.target.value)}
                       value={item.value}
                       type={item.type}
+                      placeholder={item.placeholder}
                     />
                   )}
                 </div>
@@ -118,9 +127,7 @@ const UICard = (props: UICardProps) => {
           <Tag width={25} level={props.tags?.html} type="html" />
         </Show>
       </div>
-      <div class="max-w-fit" onClick={(e) => e.stopPropagation()}>
-        {props.children}
-      </div>
+      {props.children}
     </div>
   );
 };

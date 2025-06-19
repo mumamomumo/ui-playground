@@ -1,4 +1,4 @@
-import { createEffect, createSignal } from "solid-js";
+import { createSignal } from "solid-js";
 import SlideOutInput from "../UI/SlideOutInput";
 import UICard from "./UICard";
 
@@ -6,8 +6,6 @@ const SlideOutInputCard = () => {
   const [directionLeft, setDirectionLeft] = createSignal("true");
   const [version2, setVersion2] = createSignal(false);
   const [inputPlaceholder, setInputPlaceholder] = createSignal("Placeholder");
-
-  createEffect(() => console.log(directionLeft()));
 
   return (
     <UICard

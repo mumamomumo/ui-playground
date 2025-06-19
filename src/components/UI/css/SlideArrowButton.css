@@ -1,0 +1,45 @@
+.slide-out-arrow-button {
+  position: relative;
+  background-color: purple;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 200ms ease-out;
+}
+
+.slide-out-arrow-button p {
+  margin-right: 1rem;
+  transition: all 200ms ease-out;
+}
+
+.slide-out-arrow-button:hover p {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+.slide-out-arrow-button .inside,
+.slide-out-arrow-button .outside {
+  top: 50%;
+  translate: 0 -50%;
+  width: 1.3rem;
+  height: 1.3rem;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  position: absolute;
+  transition: all 200ms ease-out;
+}
+
+.slide-out-arrow-button .inside {
+  right: 0.5rem;
+}
+.slide-out-arrow-button .outside {
+  left: 0.5rem;
+  transform: translateX(-150%);
+}
+.slide-out-arrow-button:hover .inside {
+  transform: translateX(150%);
+}
+.slide-out-arrow-button:hover .outside {
+  transform: translateX(0%);
+}
